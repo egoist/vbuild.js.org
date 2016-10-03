@@ -110,7 +110,7 @@ $ ~/my-project vbuild --dev
       ...mapState(['home'])
     },
     created() {
-      document.title = '>vbuild: Install once, Build everywhere'
+      document.title = 'vbuild: Install once, Build everywhere'
     },
     mounted() {
       for (let i = 0; i < this.home.total; i++) {
