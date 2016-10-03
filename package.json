@@ -1,0 +1,23 @@
+{
+  "name": "vbuild.js.org",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vbuild",
+    "dev": "vbuild -d",
+    "gh": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "highlight.js": "^9.7.0",
+    "jump.js": "^1.0.1",
+    "vue": "^2.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.11.0"
+  }
+}
