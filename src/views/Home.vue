@@ -4,7 +4,7 @@
 
     <section class="slide" id="slide0">
       <h1 class="site-name">
-        <span class="title">vbuild &gt; Install once, Build everywhere</span><br>
+        <span class="title"><strong>vbuild:</strong> Install once, Build everywhere</span><br>
         <span class="description">for Vue.js but not only Vue.js</span>
       </h1>
 
@@ -118,6 +118,13 @@ $ ~/my-project vbuild --dev
     margin: 0;
     margin-bottom: 50px;
     font-size: 40px;
+    & .title {
+      & strong {
+        font-weight: 300;
+        color: #4fc08d;
+        font-style: italic;
+      }
+    }
     & .description {
       font-size: 24px;
       color: #999;

@@ -47,13 +47,29 @@
     width: 12px;
     height: 12px;
     background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
     border-radius: 50%;
     cursor: pointer;
+    position: relative;
     &.active {
       cursor: default;
-      background-color: #ddd;
+      background-color: white;
+      border-color: #8e8e8e;
+      &:after {
+        content: '';
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background-color: #8e8e8e;
+        top: 50%;
+        left: 50%;
+        margin-left: -2px;
+        margin-top: -2px;
+        display: inline-block;
+        position: absolute;
+      }
     }
-    &:hover {
+    &:not(.active):hover {
       background-color: #ddd;
     }
   }
