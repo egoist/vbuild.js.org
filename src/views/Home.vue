@@ -9,9 +9,12 @@
       </h1>
 
       <div class="actions">
-        <a class="btn" href="https://github.com/egoist/vbuild"><svg id="i-github" viewBox="0 0 64 64" width="32" height="32">
+        <a class="btn" style="margin-right: 10px;" href="https://github.com/egoist/vbuild"><svg id="i-github" viewBox="0 0 64 64" width="32" height="32">
     <path stroke-width="0" fill="currentColor" d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z" />
 </svg>Start me on GitHub</a>
+      <router-link to="guide/options" class="btn"><svg id="i-book" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M16 7 C16 7 9 1 2 6 L2 28 C9 23 16 28 16 28 16 28 23 23 30 28 L30 6 C23 1 16 7 16 7 Z M16 7 L16 28" />
+        </svg> Read the Guide</router-link>
       </div>
       
       <jump to="#slide1"></jump>

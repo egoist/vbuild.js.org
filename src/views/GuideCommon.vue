@@ -48,6 +48,11 @@
             <td>Path to template file for index.html</td>
           </tr>
           <tr>
+            <td>electron</td>
+            <td>false</td>
+            <td>Run in Electron mode</td>
+          </tr>
+          <tr>
             <td>lint</td>
             <td>false</td>
             <td>Run ESLint while building the project</td>
