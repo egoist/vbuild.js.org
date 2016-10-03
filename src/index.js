@@ -1,6 +1,10 @@
 import EVA from 'eva.js'
 import App from 'components/App'
 import Home from 'src/views/Home'
+import Guide from 'src/views/Guide'
+import GuideCommon from 'src/views/GuideCommon'
+import GuideBabel from 'src/views/GuideBabel'
+import GuidePostcss from 'src/views/GuidePostcss'
 
 const app = new EVA()
 
@@ -8,7 +12,7 @@ app.model({
   name: 'home',
   state: {
     active: 0,
-    total: 5,
+    total: 6,
     jumping: false
   },
   mutations: {
@@ -28,7 +32,12 @@ app.model({
 })
 
 app.router(route => [
-  route('/', Home)
+  route('/', Home),
+  route('/guide', Guide, [
+    route('options', GuideCommon),
+    route('babel', GuideBabel),
+    route('postcss', GuidePostcss)
+  ])
 ])
 
 app.start(App, '#app')

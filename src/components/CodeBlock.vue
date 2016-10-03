@@ -13,7 +13,8 @@
     },
     computed: {
       highlightedCode() {
-        return hljs.highlightAuto(this.code).value
+        const code = this.code || this.$slots.default[0].text
+        return hljs.highlightAuto(code.trim()).value
       }
     }
   }

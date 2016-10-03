@@ -51,6 +51,14 @@
       <window title="~/my-project/vue.config.json">
         <code-block :code="configExampleCode"></code-block>
       </window>
+      <jump to="#slide5"></jump>
+    </section>
+
+    <section class="slide" id="slide5">
+      <h1>Almost There!</h1>
+      <router-link to="guide/options" class="btn"><svg id="i-book" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M16 7 C16 7 9 1 2 6 L2 28 C9 23 16 28 16 28 16 28 23 23 30 28 L30 6 C23 1 16 7 16 7 Z M16 7 L16 28" />
+</svg> Read the Guide</router-link>
     </section>
   </div>
 </template>
@@ -87,7 +95,9 @@ $ ~/my-project vbuild --dev
   "dist": "./public",
   "postcss": {
     "use": ["postcss-mixins", "postcss-simple-vars"],
-    "autoprefixer": ["ie > 10"]
+    "autoprefixer": {
+      "browsers": ["ie > 10"]
+    }
   }
   // ...
 }`
@@ -95,6 +105,9 @@ $ ~/my-project vbuild --dev
     },
     computed: {
       ...mapState(['home'])
+    },
+    created() {
+      document.title = '>vbuild: Install once, Build everywhere'
     },
     mounted() {
       for (let i = 0; i < this.home.total; i++) {
@@ -115,8 +128,11 @@ $ ~/my-project vbuild --dev
   }
 </script>
 
-<style src="../css/tomorrow-night-bright.css"></style>
+<style src="highlight.js/styles/github.css"></style>
 <style scoped> 
+  .page {
+    text-align: center;
+  }
   h1 {
     font-weight: 300;
     margin: 0;
