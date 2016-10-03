@@ -3,7 +3,10 @@
     <github-corner></github-corner>
 
     <section class="slide" id="slide1">
-      <h1 class="site-name">vbuild &gt; Install once, Build everywhere</h1>
+      <h1 class="site-name">
+        <span class="title">vbuild &gt; Install once, Build everywhere</span><br>
+        <span class="description">for Vue.js but not only Vue.js</span>
+      </h1>
       <window title="./my-project/src/index.js">
         <code-block :code="exampleCode"></code-block>
       </window>
@@ -93,6 +96,12 @@ $ vbuild --dev
     margin: 0;
     margin-bottom: 100px;
     font-size: 40px;
+  }
+  .site-name {
+    & .description {
+      font-size: 14px;
+      color: #999;
+    }
   }
   .slide {
     height: 100%;
