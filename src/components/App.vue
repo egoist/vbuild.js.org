@@ -7,7 +7,7 @@
         <span class="title">vbuild &gt; Install once, Build everywhere</span><br>
         <span class="description">for Vue.js but not only Vue.js</span>
       </h1>
-      <window title="./my-project/src/index.js">
+      <window title="~/my-project/src/index.js">
         <code-block :code="exampleCode"></code-block>
       </window>
       <jump to="#slide2"></jump>
@@ -31,7 +31,7 @@
 
     <section class="slide" id="slide4">
       <h1>And yep, config file, the easy one</h1>
-      <window title="./my-project/vue.config.json">
+      <window title="~/my-project/vue.config.json">
         <code-block :code="configExampleCode"></code-block>
       </window>
     </section>
@@ -57,7 +57,7 @@ new Vue({
   render: h => h(Counter)
 })`,
         exampleCommand: `$ npm install -g vbuild
-$ vbuild --dev
+$ ~/my-project vbuild --dev
 
 > vbuild app is running at http://localhost:4000`,
         configExampleCode: `// In fact, there're few things you need to config!
