@@ -94,7 +94,7 @@ $ vbuild --dev
   h1 {
     font-weight: 300;
     margin: 0;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     font-size: 40px;
   }
   .site-name {
