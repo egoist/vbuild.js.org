@@ -13,7 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eva.js": "^0.3.3",
     "highlight.js": "^9.7.0",
+    "in-view": "^0.4.3",
     "jump.js": "^1.0.1",
     "vue": "^2.0.1"
   },
