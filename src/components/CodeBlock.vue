@@ -3,7 +3,9 @@
 </template>
 
 <script>
-  import highlight from 'highlight.js'
+  import hljs from 'highlight.js/lib/highlight'
+
+  hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
 
   export default {
     props: {
@@ -11,7 +13,7 @@
     },
     computed: {
       highlightedCode() {
-        return highlight.highlightAuto(this.code).value
+        return hljs.highlightAuto(this.code).value
       }
     }
   }
