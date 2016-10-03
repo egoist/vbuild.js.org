@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vbuild",
     "dev": "vbuild -d",
-    "gh": "gh-pages -d dist"
+    "gh": "cp CNAME dist/ && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
