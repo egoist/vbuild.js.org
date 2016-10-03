@@ -1,5 +1,5 @@
 {
-  "title": "vbuild > Install once, Build everywhere",
+  "title": "vbuild: Install once, Build everywhere",
   "template": "./index.html",
   "alias": true
 }

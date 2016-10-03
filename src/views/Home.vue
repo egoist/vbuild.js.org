@@ -47,7 +47,7 @@
     </section>
 
     <section class="slide" id="slide4">
-      <h1>And yep, config file, the easy one</h1>
+      <h1>Optionally, config file, the easy way</h1>
       <window title="~/my-project/vue.config.json">
         <code-block :code="configExampleCode"></code-block>
       </window>
@@ -85,6 +85,10 @@ $ ~/my-project vbuild --dev
 {
   "title": "My Awesome Project",
   "dist": "./public",
+  "postcss": {
+    "use": ["postcss-mixins", "postcss-simple-vars"],
+    "autoprefixer": ["ie > 10"]
+  }
   // ...
 }`
       }
