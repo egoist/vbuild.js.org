@@ -7,7 +7,7 @@
         </h1>
         <ul class="nav">
           <li>
-            <router-link to="/guide/options">Options</router-link>
+            <router-link to="/guide/home">Guide</router-link>
           </li>
           <li>
             <router-link to="/guide/babel">Babel</router-link>

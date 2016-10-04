@@ -34,7 +34,7 @@ app.model({
 app.router(route => [
   route('/', Home),
   route('/guide', Guide, [
-    route('options', GuideCommon),
+    route('home', GuideCommon),
     route('babel', GuideBabel),
     route('postcss', GuidePostcss)
   ])
