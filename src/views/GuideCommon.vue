@@ -90,6 +90,7 @@
         </p>
         <code-block>{
   "vendor": ["vue", "vue-router"]
+  // set to false to disable it
 }</code-block>
       </div>
 
