@@ -65,6 +65,9 @@ module.exports = {
     created() {
       document.title = 'PostCSS'
     },
+    mounted() {
+      window.scrollTo(0, 0)
+    },
     components: {
       CodeBlock
     }
