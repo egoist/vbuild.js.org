@@ -6,6 +6,7 @@
   import hljs from 'highlight.js/lib/highlight'
 
   hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+  hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
 
   export default {
     props: {
