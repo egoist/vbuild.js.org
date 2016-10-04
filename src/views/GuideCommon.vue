@@ -4,6 +4,13 @@
       <h2 class="page-title">Guide</h2>
 
       <div class="block">
+        <h3>Install</h3>
+        <code-block># recommend node.js 6+ and npm 3+
+$ npm install -g vbuild
+</code-block>
+      </div>
+
+      <div class="block">
         <h3>Options</h3>
         <table>
           <thead>
