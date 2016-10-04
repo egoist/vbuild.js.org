@@ -59,12 +59,12 @@
         margin-right: 20px;
         a {
           color: #4fc08d;
-          border-bottom: 1px dotted;
-          height: 30px;
-          line-height: 30px;
+          border-bottom: 1px solid transparent;
+          height: 60px;
+          line-height: 60px;
           display: inline-block;
           &:hover, &.router-link-active {
-            border-bottom-style: solid;
+            border-bottom-color: #4fc08d;
           }
         }
       }
