@@ -43,3 +43,9 @@ app.router(route => [
 ])
 
 app.start(App, '#app')
+
+app.$router.beforeEach((to, from, next) => {
+  next()
+  ga('set', 'page', to)
+  ga('send', 'pageview')
+})
