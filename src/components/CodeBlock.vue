@@ -15,7 +15,7 @@
     computed: {
       highlightedCode() {
         const code = this.code || this.$slots.default[0].text
-        return hljs.highlightAuto(code.trim()).value
+        return hljs.highlightAuto(code).value
       }
     }
   }

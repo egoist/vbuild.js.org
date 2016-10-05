@@ -15,6 +15,9 @@
           <li>
             <router-link to="/guide/postcss">PostCSS</router-link>
           </li>
+          <li>
+            <router-link to="/guide/components">Components</router-link>
+          </li>
         </ul>
       </div>
     </header>
@@ -81,10 +84,24 @@
       padding-bottom: 20px;
       border-bottom: 1px solid #e2e2e2;
     }
+    p {
+      margin-bottom: 20px;
+    }
   }
 
   h2.page-title {
     margin-bottom: 30px;
     color: #4fc08d;
+  }
+
+  .warning {
+    background-color: #feefb3;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #e0cb79;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 3px;
+    vertical-align: top;
   }
 </style>
