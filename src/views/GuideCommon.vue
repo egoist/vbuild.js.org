@@ -23,12 +23,12 @@ $ npm install -g vbuild
           <tbody>
             <tr>
               <td>entry</td>
-              <td>./src/index.js</td>
+              <td>'./src/index.js'</td>
               <td>Path to app entry.</td>
             </tr>
             <tr>
               <td>dist</td>
-              <td>./dist</td>
+              <td>'./dist'</td>
               <td>Path to dist directory.</td>
             </tr>
             <tr>
@@ -48,13 +48,43 @@ $ npm install -g vbuild
             </tr>
             <tr>
               <td>title</td>
-              <td>vbuild app</td>
+              <td>'vbuild app'</td>
               <td>The title in bundled index.html</td>
             </tr>
             <tr>
               <td>template</td>
               <td>(built-in)</td>
               <td>Path to template file for index.html</td>
+            </tr>
+            <tr>
+              <td>cssModules</td>
+              <td>false</td>
+              <td>Use css-modules for .css files</td>
+            </tr>
+            <tr>
+              <td>cjs</td>
+              <td>false</td>
+              <td>Bundle in commonjs format</td>
+            </tr>
+            <tr>
+              <td>umd</td>
+              <td>false</td>
+              <td>Bundle in umd format</td>
+            </tr>
+            <tr>
+              <td>compress</td>
+              <td>true</td>
+              <td>Compress in production mode</td>
+            </tr>
+            <tr>
+              <td>gzip</td>
+              <td>false</td>
+              <td>Gzip in production mode</td>
+            </tr>
+            <tr>
+              <td>filename</td>
+              <td>'client'</td>
+              <td>Filename of bundled file</td>
             </tr>
             <tr>
               <td>notify</td>
@@ -72,6 +102,11 @@ $ npm install -g vbuild
               <td>Run ESLint while building the project</td>
             </tr>
             <tr>
+              <td>devtool</td>
+              <td>eval-source-map(dev)<br>source-map(prod)</td>
+              <td>Source mapping, use `false` to disable</td>
+            </tr>
+            <tr>
               <td>development</td>
               <td>undefined</td>
               <td>Specific options only for development mode</td>
@@ -83,7 +118,7 @@ $ npm install -g vbuild
             </tr>
             <tr>
               <td>config</td>
-              <td>./vue.config.(js|json)</td>
+              <td>'./vue.config.(js|json)'</td>
               <td>Path to config file, set to false to disable it</td>
             </tr>
           </tbody>
