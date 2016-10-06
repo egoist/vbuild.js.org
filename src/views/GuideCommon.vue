@@ -107,6 +107,16 @@ $ npm install -g vbuild
               <td>Source mapping, use `false` to disable</td>
             </tr>
             <tr>
+              <td>clean</td>
+              <td>false</td>
+              <td>Remove dist directory before bundling</td>
+            </tr>
+            <tr>
+              <td>alias</td>
+              <td>undefined</td>
+              <td>Add alias names to resolve module</td>
+            </tr>
+            <tr>
               <td>development</td>
               <td>undefined</td>
               <td>Specific options only for development mode</td>
@@ -124,7 +134,7 @@ $ npm install -g vbuild
           </tbody>
         </table>
       </div>
-      
+
       <div class="block">
         <h3>Vendor thunk</h3>
         <p>
@@ -153,8 +163,31 @@ $ npm install -g vbuild
           Exclude packages or files from being bundled in your app.
         </p>
         <code-block>{
-  "externals": ["./exclude/this.js", "mysql"]  
+  "externals": ["./exclude/this.js", "mysql"]
 }</code-block>
+      </div>
+
+      <div class="block">
+        <h3>Alias</h3>
+        <p>
+          You can add alias name to resolve modules, for example, alias Vue to `vue/dist/vue`:
+        </p>
+        <code-block>{
+  "alias": {
+    "vue": "vue/dist/vue"
+  }
+}</code-block>
+
+
+        <p>vbuild gives your a convenient default alias, you can enable it by set `aliasDefault` to `true`, then you can import every thing without dot hell:</p>
+
+        <code-block>// src refers to ./src
+import MyComponent from 'src/components/MyComponent.vue'</code-block>
+
+        <p>
+          You can also set `aliasDefault` to a string, which stands for the source dir of your app.
+        </p>
+
       </div>
 
     </div>

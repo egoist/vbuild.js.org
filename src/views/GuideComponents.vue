@@ -78,11 +78,6 @@ vbuild --config vue.config.uncompressed.json
 # compressed version
 vbuild --config vue.config.compressed.json</code-block>
       </div>
-        
-        <div class="warning">warning</div>
-        <p>
-          If you have these two scripts, which bundle compressed version into `./dist/compressed` and uncompressed version into `./dist`, remember to bundle uncompressed version before compressed version, since the former will delete `./dist` directory before bundling.
-        </p>
 
         <a href="https://github.com/egoist/vue-windows">Real World Example: vue-windows</a>
 
