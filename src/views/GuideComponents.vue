@@ -2,10 +2,10 @@
   <section class="main">
     <div class="container">
       <h2 class="page-title">Components</h2>
-        
+
       <div class="block">
         <p>How to bundle my Vue components in UMD or CommonJS format?</p>
-    
+
         <p>Well, it's not hard at all !!</p>
       </div>
 
@@ -70,7 +70,7 @@ tab.css.map   84 bytes       0  [emitted]  tab</code-block>
 }</code-block>
 
       <div class="block">
-  
+
         <h3>The commands:</h3>
 
         <code-block># uncompressed version
@@ -78,6 +78,11 @@ vbuild --config vue.config.uncompressed.json
 # compressed version
 vbuild --config vue.config.compressed.json</code-block>
       </div>
+
+        <div class="warning">warning</div>
+        <p>
+          If you have these two scripts, which bundle compressed version into `./dist/compressed` and uncompressed version into `./dist`, remember to bundle uncompressed version before compressed version, since the former will delete `./dist` directory before bundling.
+        </p>
 
         <a href="https://github.com/egoist/vue-windows">Real World Example: vue-windows</a>
 

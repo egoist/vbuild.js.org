@@ -108,7 +108,7 @@ $ npm install -g vbuild
             </tr>
             <tr>
               <td>clean</td>
-              <td>false</td>
+              <td>true</td>
               <td>Remove dist directory before bundling</td>
             </tr>
             <tr>
