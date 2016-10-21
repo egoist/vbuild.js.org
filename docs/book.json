@@ -1,10 +1,15 @@
 {
     "plugins": [
-        "github"
+        "github",
+        "edit-link"
     ],
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/egoist/vbuild"
+        },
+        "edit-link": {
+            "base": "https://github.com/egoist/vbuild/tree/master/docs",
+            "label": "Edit This Page"
         }
     }
 }
