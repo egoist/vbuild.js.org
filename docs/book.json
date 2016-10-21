@@ -8,7 +8,7 @@
             "url": "https://github.com/egoist/vbuild"
         },
         "edit-link": {
-            "base": "https://github.com/egoist/vbuild/tree/master/docs",
+            "base": "https://github.com/egoist/vbuild.js.org/tree/master/docs",
             "label": "Edit This Page"
         }
     }
