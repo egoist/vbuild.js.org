@@ -1,11 +1,6 @@
 import EVA from 'eva.js'
 import App from 'components/App'
 import Home from 'src/views/Home'
-import Guide from 'src/views/Guide'
-import GuideCommon from 'src/views/GuideCommon'
-import GuideBabel from 'src/views/GuideBabel'
-import GuidePostcss from 'src/views/GuidePostcss'
-import GuideComponents from 'src/views/GuideComponents'
 
 const app = new EVA()
 
@@ -33,13 +28,7 @@ app.model({
 })
 
 app.router(route => [
-  route('/', Home),
-  route('/guide', Guide, [
-    route('home', GuideCommon),
-    route('babel', GuideBabel),
-    route('postcss', GuidePostcss),
-    route('components', GuideComponents)
-  ])
+  route('/', Home)
 ])
 
 app.start(App, '#app')

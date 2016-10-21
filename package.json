@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vbuild",
+    "build": "vbuild && npm run docs",
     "dev": "vbuild -d",
-    "gh": "cp CNAME dist/ && gh-pages -d dist"
+    "gh": "cp CNAME dist/ && gh-pages -d dist",
+    "docs": "gitbook build docs && cp -rf docs/_book ./dist/docs"
   },
   "keywords": [],
   "author": "",
