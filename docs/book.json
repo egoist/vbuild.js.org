@@ -2,7 +2,8 @@
     "plugins": [
         "github",
         "edit-link",
-        "anchors"
+        "anchors",
+        "toc"
     ],
     "pluginsConfig": {
         "github": {
@@ -11,6 +12,10 @@
         "edit-link": {
             "base": "https://github.com/egoist/vbuild.js.org/tree/master/docs",
             "label": "Edit This Page"
+        },
+        "toc": {
+            "addClass": true,
+            "className": "toc"
         }
     }
 }

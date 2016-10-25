@@ -1,6 +1,8 @@
-# Options
+# Config
 
-Options can be passed in from command-line and your configuration file, e.g.`vue.config.json`.
+Config can be passed in from command-line or your configuration file, vbuild will automatically load `vue.config.json` or `vue.config.js` if they exist, alternatively you can use `--config` to specific a custom path to your config file.
+
+<!-- toc -->
 
 ## Shared options
 
@@ -90,5 +92,28 @@ module.exports = {
       require.resolve('babel-preset-stage-0')
     ]
   }
+}
+```
+
+## Merge Webpack config
+
+For advanced usage, you can merge your webpack config into the default one vbuild uses, simply use `--merge-config ./my.webpack.config.js` option.
+
+You can also use an object as its value:
+
+```js
+module.exports = {
+  mergeConfig: {
+    // following options will be merged
+    module: {loaders: [/*...*/]},
+    plugins: [myPlugin()]
+  }
+}
+
+// or an array for merging multiple webpack config
+module.exports = {
+  mergeConfig: [
+    a, b, c //...
+  ]
 }
 ```
