@@ -12,8 +12,6 @@ Bundle components should be easy, and it is. Here we don't need js, so just usin
   "filename": "my-module",
   // do compress, you can turn it off though
   "compress": true,
-  // do not add a vendor thunk
-  "vendor": false,
   // all dependencies will be included in bundled file
   // to exclude them:
   "externals": ["object-assign"],
@@ -21,3 +19,5 @@ Bundle components should be easy, and it is. Here we don't need js, so just usin
   "devtool": false
 }
 ```
+
+**Note**: in `umd` and `cjs` format, the vendor thunk is always removed, since you are bundling a library, not an app.

@@ -6,5 +6,4 @@
 4. Recipes
   * [Server bundle](server_bundle.md)
   * [Components](components.md)
-
-
+5. [Showcase](showcase.md)
