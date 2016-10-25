@@ -77,7 +77,7 @@ babel|See below|Babel options
 
 ```js
 {
-  "presets: ["es2015", "stage-2"],
+  "presets: [["es2015", {"modules": false}], "stage-2"],
   "plugins": ["transform-runtime", "transform-vue-jsx"]
 }
 ```
