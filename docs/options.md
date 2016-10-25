@@ -18,10 +18,10 @@ filename|`client`|Name of bundled files, without extension
 notify|`true`|Notify when compilation is done
 electron|`false`|Run in electron mode
 alias|undefined|Add resolve alias
-resolveRoot|undefined|Resolve dependencies in ./src path or a custom path
+resolve|undefined|Resolve dependencies in ./src path or a custom path
 target|webpack target|eg: node
 vendor|['vue']|Split modules or files in a single vendor thunk, for better caching
-config|`./vue.config.json`|Path to config file, set to `false` to disable it
+config|`./vue.config.js(on)`|Path to config file, set to `false` to disable it
 
 ## Production options
 
