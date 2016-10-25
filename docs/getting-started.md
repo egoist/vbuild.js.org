@@ -47,4 +47,4 @@ The other one is:
 
 ## Customize
 
-However the defaults are good enough for most people, you may still have desired build setup, like updating html title and custom postcss plugins. Luckily, you can achieve this easily with [a few configurations](/docs/config.html).
+However the defaults are good enough for most people, you may still have desired build setup, like updating html title and custom postcss plugins. Luckily, you can achieve this easily with [a few configurations](/config.html).
