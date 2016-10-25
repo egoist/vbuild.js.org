@@ -26,6 +26,8 @@ Most likely you only need eslint while building for production, since it might k
 }
 ```
 
+You can pass all [eslint options](http://eslint.org/docs/developer-guide/nodejs-api#cliengine) here.
+
 ## Gzip
 
 Prepare compressed versions of assets to serve them with Content-Encoding. See [Usage](https://github.com/webpack/compression-webpack-plugin#usage).
