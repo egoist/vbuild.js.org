@@ -27,6 +27,8 @@ config|`./vue.config.js(on)`|Path to config file, set to `false` to disable it
 
 ## Production options
 
+Prudction mode indicates no `--dev` `--watch`
+
 name|default|description
 ---|---|---
 devtool|`source-map`|Devtool
@@ -35,10 +37,12 @@ clean|`true`|Remove dist folder before bundling
 
 ## Development options
 
+Development indicates one of `--dev` and `--watch`
+
 name|default|description
 ---|---|---
 devtool|`eval-source-map`|Devtool
-live|`false`|Live reloading
+live|`false`|Live reloading instead hot reloading (dev mode only)
 
 ## PostCSS options
 

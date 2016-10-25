@@ -8,7 +8,7 @@
 vbuild init my-project
 ```
 
-This command will a new folder called `my-project` inside current folder. Inside that directory, it will generate the initial project structure and install the transitive dependencies.
+This command will create a new folder called `my-project` inside current folder. Inside that directory, it will generate the initial project structure and install the transitive dependencies.
 
 No configuration and build tools like webpack and babel need to be installed in your project.
 
@@ -37,8 +37,6 @@ The other one is:
 
 - watch mode - `vbuild --watch` like production mode but output files are not minified and it will rebuild due to file changes
 
-
-
 ## Customize
 
-However the defaults are good enough for most people, you may still have desired build setup, like updating html title and custom postcss plugins. Luckily, you can achieve this eaisily with [a few configurations](/docs/config.html).
+However the defaults are good enough for most people, you may still have desired build setup, like updating html title and custom postcss plugins. Luckily, you can achieve this easily with [a few configurations](/docs/config.html).
