@@ -29,8 +29,6 @@ name|default|description
 ---|---|---
 devtool|`source-map`|Devtool
 compress|`true`|Compress bundled files
-gzip|`false`|Gzip bundled files
-lint|`false`|Lint your source code
 clean|`true`|Remove dist folder before bundling
 
 ## Development options
