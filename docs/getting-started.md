@@ -8,7 +8,15 @@
 vbuild init my-project
 ```
 
-This command will create a new folder called `my-project` inside current folder. Inside that directory, it will generate the initial project structure and install the transitive dependencies.
+This command will create a new folder called `my-project` inside current folder. Inside that directory, it will generate the initial project structure and you can run `npm install` to install app dependencies like `vue`:
+
+```bash
+.
+├── node_modules
+├── package.json
+├── src
+└── vue.config.js
+```
 
 No configuration and build tools like webpack and babel need to be installed in your project.
 

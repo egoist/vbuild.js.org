@@ -2,6 +2,8 @@
 
 Addons are some features you may need for larger projects, like `eslint` `test` and `gzip` et al.
 
+<!-- toc -->
+
 ## ESLint
 
 You can use option `eslint` to run eslint during compilation, it defaults to use [eslint-config-rem](https://github.com/egoist/eslint-config-rem) which based on [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo) but customized for Vue apps.
