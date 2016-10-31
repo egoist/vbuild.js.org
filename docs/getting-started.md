@@ -30,7 +30,7 @@ This command is a shorthand for `vbuild`, it builds the app into `./dist` folder
 
 It correctly bundles Vue.js in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes, and even `vue` is spilted into the `vendor` thunk for better caching.
+The build is minified and the filenames include the hashes, and even `vue` is spilted into the `vendor` chunk for better caching.
 
 Your app is ready to be deployed!
 

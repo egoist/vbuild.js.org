@@ -20,4 +20,4 @@ Bundle components should be easy, and it is. Here we don't need js, so just usin
 }
 ```
 
-**Note**: in `umd` and `cjs` format, the vendor thunk is always removed, since you are bundling a library, not an app.
+**Note**: in `umd` and `cjs` format, the vendor chunk is always removed, since you are bundling a library, not an app.
