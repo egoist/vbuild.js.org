@@ -1,0 +1,620 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Config · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="entry.html" />
+    
+    
+    <link rel="prev" href="getting-started.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                    Getting started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    Config
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="entry.html">
+            
+                <a href="entry.html">
+            
+                    
+                    Entry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="templates.html">
+            
+                <a href="templates.html">
+            
+                    
+                    Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="addons.html">
+            
+                <a href="addons.html">
+            
+                    
+                    Addons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Recipes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="server_bundle.html">
+            
+                <a href="server_bundle.html">
+            
+                    
+                    Server bundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="components.html">
+            
+                <a href="components.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="showcase.html">
+            
+                <a href="showcase.html">
+            
+                    
+                    Showcase
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Config</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="config"><a name="config" class="plugin-anchor" href="#config"><i class="fa fa-link" aria-hidden="true"></i></a>Config</h1>
+<p>Config can be passed in from command-line or your configuration file, vbuild will automatically load <code>vue.config.json</code> or <code>vue.config.js</code> if they exist, alternatively you can use <code>--config</code> to specific a custom path to your config file.</p>
+<!-- toc -->
+<ul>
+<li><a href="#shared-options">Shared options</a></li>
+<li><a href="#production-options">Production options</a></li>
+<li><a href="#development-options">Development options</a></li>
+<li><a href="#postcss-options">PostCSS options</a></li>
+<li><a href="#babel-options">Babel options</a></li>
+<li><a href="#merge-webpack-config">Merge Webpack config</a></li>
+</ul>
+<!-- toc stop -->
+<h2 id="shared-options"><a name="shared-options" class="plugin-anchor" href="#shared-options"><i class="fa fa-link" aria-hidden="true"></i></a>Shared options</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dev</td>
+<td><code>false</code></td>
+<td>Run in development mode</td>
+</tr>
+<tr>
+<td>entry</td>
+<td><code>./src/index.js</code></td>
+<td>Entry point of your app</td>
+</tr>
+<tr>
+<td>dist</td>
+<td><code>./dist</code></td>
+<td>Dist folder of bundled files</td>
+</tr>
+<tr>
+<td>template</td>
+<td>(built-in)</td>
+<td>Path to the template for index.js</td>
+</tr>
+<tr>
+<td>title</td>
+<td><code>vbuild app</code></td>
+<td>Title in the index.html (only available in build-in tmeplate)</td>
+</tr>
+<tr>
+<td>cjs</td>
+<td><code>false</code></td>
+<td>Bundle in <code>CommonJS</code> format</td>
+</tr>
+<tr>
+<td>umd</td>
+<td><code>false</code></td>
+<td>Bundle in <code>umd</code> format and set a moduleName</td>
+</tr>
+<tr>
+<td>cssModules</td>
+<td><code>false</code></td>
+<td>Use css-modules to load css files</td>
+</tr>
+<tr>
+<td>filename</td>
+<td><code>client</code></td>
+<td>Name of bundled files, without extension</td>
+</tr>
+<tr>
+<td>notify</td>
+<td><code>true</code></td>
+<td>Notify when compilation is done</td>
+</tr>
+<tr>
+<td>electron</td>
+<td><code>false</code></td>
+<td>Run in electron mode</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>undefined</td>
+<td>Add resolve alias</td>
+</tr>
+<tr>
+<td>resolve</td>
+<td>undefined</td>
+<td>Resolve dependencies in ./src path or a custom path</td>
+</tr>
+<tr>
+<td>target</td>
+<td>webpack target</td>
+<td>eg: node</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>[&apos;vue&apos;]</td>
+<td>Split modules or files in a single vendor chunk, for better caching</td>
+</tr>
+<tr>
+<td>config</td>
+<td><code>./vue.config.js(on)</code></td>
+<td>Path to config file, set to <code>false</code> to disable it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="production-options"><a name="production-options" class="plugin-anchor" href="#production-options"><i class="fa fa-link" aria-hidden="true"></i></a>Production options</h2>
+<p>Prudction mode indicates no <code>--dev</code> <code>--watch</code></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>devtool</td>
+<td><code>source-map</code></td>
+<td>Devtool</td>
+</tr>
+<tr>
+<td>compress</td>
+<td><code>true</code></td>
+<td>Compress bundled files</td>
+</tr>
+<tr>
+<td>clean</td>
+<td><code>true</code></td>
+<td>Remove dist folder before bundling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-options"><a name="development-options" class="plugin-anchor" href="#development-options"><i class="fa fa-link" aria-hidden="true"></i></a>Development options</h2>
+<p>Development indicates one of <code>--dev</code> and <code>--watch</code></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>devtool</td>
+<td><code>eval-source-map</code></td>
+<td>Devtool</td>
+</tr>
+<tr>
+<td>live</td>
+<td><code>false</code></td>
+<td>Live reloading instead hot reloading (dev mode only)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="postcss-options"><a name="postcss-options" class="plugin-anchor" href="#postcss-options"><i class="fa fa-link" aria-hidden="true"></i></a>PostCSS options</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>postcss.autoprefixer</td>
+<td>undefined</td>
+<td>Autoprefixer options</td>
+</tr>
+<tr>
+<td>postcss.use</td>
+<td>[&apos;autoprefixer&apos;, &apos;postcss-nested&apos;]</td>
+<td>PostCSS plugins</td>
+</tr>
+<tr>
+<td>postcss.append</td>
+<td>true</td>
+<td>Append your plugins to built-in plugins</td>
+</tr>
+</tbody>
+</table>
+<p>There are two ways of define postcss options:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// vue.config.js</span>
+<span class="hljs-comment">// this way is available in .json file too</span>
+<span class="hljs-built_in">module</span>.exports = {
+  postcss: {
+    use: [<span class="hljs-string">&apos;postcss-cssnext&apos;</span>],
+    <span class="hljs-string">&apos;postcss-cssnext&apos;</span>: {}, <span class="hljs-comment">// options for that plugin</span>
+    append: <span class="hljs-literal">false</span>
+  }
+}
+<span class="hljs-comment">// or use postcss api directly</span>
+<span class="hljs-comment">// only available in .js file</span>
+<span class="hljs-built_in">module</span>.exports = {
+  postcss(webpack) {
+    <span class="hljs-keyword">return</span> [] <span class="hljs-comment">// plugins</span>
+  }
+}
+</code></pre>
+<h2 id="babel-options"><a name="babel-options" class="plugin-anchor" href="#babel-options"><i class="fa fa-link" aria-hidden="true"></i></a>Babel options</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>babel</td>
+<td>See below</td>
+<td>Babel options</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">{
+  &quot;presets: [[&quot;es2015&quot;, {&quot;modules&quot;: false}], &quot;stage-2&quot;],
+  &quot;plugins&quot;: [&quot;transform-runtime&quot;, &quot;transform-vue-jsx&quot;]
+}
+</code></pre>
+<p>If you wanna override this you need to <code>require.resolve</code> in your config file:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  babel: {
+    presets: [
+      [<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;babel-preset-es2015&apos;</span>), {modules: <span class="hljs-literal">false</span>}],
+      <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;babel-preset-stage-0&apos;</span>)
+    ]
+  }
+}
+</code></pre>
+<h2 id="merge-webpack-config"><a name="merge-webpack-config" class="plugin-anchor" href="#merge-webpack-config"><i class="fa fa-link" aria-hidden="true"></i></a>Merge Webpack config</h2>
+<p>For advanced usage, you can merge your webpack config into the default one vbuild uses, simply use <code>--merge-config ./my.webpack.config.js</code> option.</p>
+<p>You can also use an object as its value:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  mergeConfig: {
+    <span class="hljs-comment">// following options will be merged</span>
+    <span class="hljs-built_in">module</span>: {loaders: [<span class="hljs-comment">/*...*/</span>]},
+    plugins: [myPlugin()]
+  }
+}
+
+<span class="hljs-comment">// or an array for merging multiple webpack config</span>
+<span class="hljs-built_in">module</span>.exports = {
+  mergeConfig: [
+    a, b, c <span class="hljs-comment">//...</span>
+  ]
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page: Getting started">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="entry.html" class="navigation navigation-next " aria-label="Next page: Entry">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-10-31T12:57:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-10-31T13:05:10.424Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
