@@ -22,7 +22,7 @@ electron|`false`|Run in electron mode
 alias|undefined|Add resolve alias
 resolve|undefined|Resolve dependencies in ./src path or a custom path
 target|webpack target|eg: node
-vendor|['vue']|Split modules or files in a single vendor chunk, for better caching
+common|['vue']|Split modules or files in a `CommonsChunk`, for better caching
 config|`./vue.config.js(on)`|Path to config file, set to `false` to disable it
 
 ## Production options
