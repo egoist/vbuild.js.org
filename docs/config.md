@@ -44,7 +44,7 @@ name|default|description
 devtool|`eval-source-map`|Devtool
 live|`false`|Live reloading instead hot reloading (dev mode only)
 host|`localhost`|The hostname for dev server
-devServer|`undefined`|`webpack-dev-server` options
+devServer|`undefined`|A function that takes the `express()` server as the argument, eg, you can use this function to add a proxy middleware 
 
 ## PostCSS options
 
