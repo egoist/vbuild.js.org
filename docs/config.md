@@ -34,6 +34,7 @@ name|default|description
 devtool|`source-map`|Devtool
 compress|`true`|Compress bundled files
 clean|`true`|Remove dist folder before bundling
+publicPath|`/`|Set the publicPath to static files, use this when you put your website in a subdirectory
 
 ## Development options
 
