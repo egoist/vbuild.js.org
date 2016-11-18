@@ -217,6 +217,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="non-vue-projects.html">
+            
+                <a href="non-vue-projects.html">
+            
+                    
+                    Non-Vue projects
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -545,6 +558,22 @@
   ]
 }
 </code></pre>
+<p>We are using <a href="https://github.com/survivejs/webpack-merge" target="_blank">webpack-merge</a> to finish the job, be sure to check out the usage there before this.</p>
+<p>For example, if you wanna override the webpack loader for js files, do:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  mergeConfig: {
+    <span class="hljs-built_in">module</span>: {
+      loaders: [
+        {
+          test: <span class="hljs-regexp">/\.js$/</span>,
+          loaders: [<span class="hljs-string">&apos;react-hot&apos;</span>, <span class="hljs-string">&apos;babel&apos;</span>],
+          exclude: [<span class="hljs-regexp">/node_modules/</span>]
+        }
+      ]
+    }
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -588,7 +617,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-11-09T13:43:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-09T13:43:36.680Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-11-18T08:59:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-18T09:01:38.320Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
