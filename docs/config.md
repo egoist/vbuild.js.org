@@ -124,3 +124,23 @@ module.exports = {
   ]
 }
 ```
+
+We are using [webpack-merge](https://github.com/survivejs/webpack-merge) to finish the job, be sure to check out the usage there before this.
+
+For example, if you wanna override the webpack loader for js files, do:
+
+```js
+module.exports = {
+  mergeConfig: {
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loaders: ['react-hot', 'babel'],
+          exclude: [/node_modules/]
+        }
+      ]
+    }
+  }
+}
+```

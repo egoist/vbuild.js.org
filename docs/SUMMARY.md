@@ -9,4 +9,5 @@
 5. Recipes
   * [Server bundle](server_bundle.md)
   * [Components](components.md)
+  * [Non-Vue projects](non-vue-projects.md)
 6. [Showcase](showcase.md)
