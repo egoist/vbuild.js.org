@@ -44,6 +44,7 @@ name|default|description
 ---|---|---
 devtool|`eval-source-map`|Devtool
 live|`false`|Live reloading instead hot reloading (dev mode only)
+open|`false`|Open app in browser
 host|`localhost`|The hostname for dev server
 devServer|`undefined`|A function that takes the `express()` server as the argument, eg, you can use this function to add a proxy middleware 
 
@@ -144,3 +145,5 @@ module.exports = {
   }
 }
 ```
+
+BTW, you can directly `require('webpack')` and all vbuild's [dependencies](https://github.com/egoist/vbuild/blob/master/package.json) without installing them again in your project.
