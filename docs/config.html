@@ -294,7 +294,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="config"><a name="config" class="plugin-anchor" href="#config"><i class="fa fa-link" aria-hidden="true"></i></a>Config</h1>
-<p>Config can be passed in from command-line or your configuration file, vbuild will automatically load <code>vue.config.json</code> or <code>vue.config.js</code> if they exist, alternatively you can use <code>--config</code> to specific a custom path to your config file.</p>
+<p>Config can be passed in from command-line or your configuration file, vbuild will automatically <code>vue.config.js</code> if they exist, alternatively you can use <code>--config</code> to specific a custom path to your config file.</p>
 <!-- toc -->
 <ul>
 <li><a href="#shared-options">Shared options</a></li>
@@ -392,7 +392,7 @@
 </tr>
 <tr>
 <td>config</td>
-<td><code>./vue.config.js(on)</code></td>
+<td><code>./vue.config.js</code></td>
 <td>Path to config file, set to <code>false</code> to disable it</td>
 </tr>
 </tbody>
@@ -497,8 +497,7 @@
 </table>
 <p>There are two ways of define postcss options:</p>
 <pre><code class="lang-js"><span class="hljs-comment">// vue.config.js</span>
-<span class="hljs-comment">// this way is available in .json file too</span>
-<span class="hljs-built_in">module</span>.exports = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   postcss: {
     use: [<span class="hljs-string">&apos;postcss-cssnext&apos;</span>],
     <span class="hljs-string">&apos;postcss-cssnext&apos;</span>: {}, <span class="hljs-comment">// options for that plugin</span>
@@ -506,8 +505,7 @@
   }
 }
 <span class="hljs-comment">// or use postcss api directly</span>
-<span class="hljs-comment">// only available in .js file</span>
-<span class="hljs-built_in">module</span>.exports = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   postcss(webpack) {
     <span class="hljs-keyword">return</span> [] <span class="hljs-comment">// plugins</span>
   }
@@ -536,7 +534,7 @@
 }
 </code></pre>
 <p>If you wanna override this you need to <code>require.resolve</code> in your config file:</p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   babel: {
     presets: [
       [<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;babel-preset-es2015&apos;</span>), {modules: <span class="hljs-literal">false</span>}],
@@ -548,7 +546,7 @@
 <h2 id="merge-webpack-config"><a name="merge-webpack-config" class="plugin-anchor" href="#merge-webpack-config"><i class="fa fa-link" aria-hidden="true"></i></a>Merge Webpack config</h2>
 <p>For advanced usage, you can merge your webpack config into the default one vbuild uses, simply use <code>--merge-config ./my.webpack.config.js</code> option.</p>
 <p>You can also use an object as its value:</p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   mergeConfig: {
     <span class="hljs-comment">// following options will be merged</span>
     <span class="hljs-built_in">module</span>: {loaders: [<span class="hljs-comment">/*...*/</span>]},
@@ -557,7 +555,7 @@
 }
 
 <span class="hljs-comment">// or an array for merging multiple webpack config</span>
-<span class="hljs-built_in">module</span>.exports = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   mergeConfig: [
     a, b, c <span class="hljs-comment">//...</span>
   ]
@@ -565,7 +563,7 @@
 </code></pre>
 <p>We are using <a href="https://github.com/survivejs/webpack-merge" target="_blank">webpack-merge</a> to finish the job, be sure to check out the usage there before this.</p>
 <p>For example, if you wanna override the webpack loader for js files, do:</p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   mergeConfig: {
     <span class="hljs-built_in">module</span>: {
       loaders: [
@@ -623,7 +621,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-11-22T07:43:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-22T07:44:14.888Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-11-22T12:17:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-22T12:24:43.907Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
