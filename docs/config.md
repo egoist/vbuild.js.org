@@ -1,6 +1,8 @@
 # Config
 
-Config can be passed in from command-line or your configuration file, vbuild will automatically load `vue.config.json` or `vue.config.js` if they exist, alternatively you can use `--config` to specific a custom path to your config file.
+Config can be passed in from command-line or your configuration file, vbuild will automatically `vue.config.js` if they exist, alternatively you can use `--config` to specific a custom path to your config file.
+
+One more thing, you can write the config file in full featured ESnext syntax just like the way you write your app with vbuild. Config file are loaded with babel using `es2015` and `stage-2` presets.
 
 <!-- toc -->
 
@@ -11,8 +13,9 @@ name|default|description
 dev|`false`|Run in development mode
 entry|`./src/index.js`|Entry point of your app
 dist|`./dist`|Dist folder of bundled files
+title|`vbuild app`|Title in the index.html
 template|(built-in)|Path to the template for index.js
-title|`vbuild app`|Title in the index.html (only available in build-in tmeplate)
+templates|`undefined`|An array of html-webpack-plugin options, this will override `title` and `template` option
 cjs|`false`|Bundle in `CommonJS` format
 umd|`false`|Bundle in `umd` format and set a moduleName
 cssModules|`false`|Use css-modules to load css files
@@ -23,7 +26,8 @@ alias|undefined|Add resolve alias
 resolve|undefined|Resolve dependencies in ./src path or a custom path
 target|webpack target|eg: node
 vendor|['vue']|Split modules or files in vendor chunk, for better caching
-config|`./vue.config.js(on)`|Path to config file, set to `false` to disable it
+static|{from: 'static', to: './'}|copy files in ./static to the root of dist directory
+config|`./vue.config.js`|Path to config file, set to `false` to disable it
 
 ## Production options
 
@@ -46,6 +50,7 @@ devtool|`eval-source-map`|Devtool
 live|`false`|Live reloading instead hot reloading (dev mode only)
 open|`false`|Open app in browser
 host|`localhost`|The hostname for dev server
+hot|`['client']`|Add hot-reload client to client entry or custom entries
 devServer|`undefined`|A function that takes the `express()` server as the argument, eg, you can use this function to add a proxy middleware 
 
 ## PostCSS options
@@ -60,8 +65,7 @@ There are two ways of define postcss options:
 
 ```js
 // vue.config.js
-// this way is available in .json file too
-module.exports = {
+export default {
   postcss: {
     use: ['postcss-cssnext'],
     'postcss-cssnext': {}, // options for that plugin
@@ -69,8 +73,7 @@ module.exports = {
   }
 }
 // or use postcss api directly
-// only available in .js file
-module.exports = {
+export default {
   postcss(webpack) {
     return [] // plugins
   }
@@ -93,7 +96,7 @@ babel|See below|Babel options
 If you wanna override this you need to `require.resolve` in your config file:
 
 ```js
-module.exports = {
+export default {
   babel: {
     presets: [
       [require.resolve('babel-preset-es2015'), {modules: false}],
@@ -103,6 +106,8 @@ module.exports = {
 }
 ```
 
+Note: change babel options for your app won't affect the options we use to load config file.
+
 ## Merge Webpack config
 
 For advanced usage, you can merge your webpack config into the default one vbuild uses, simply use `--merge-config ./my.webpack.config.js` option.
@@ -110,7 +115,7 @@ For advanced usage, you can merge your webpack config into the default one vbuil
 You can also use an object as its value:
 
 ```js
-module.exports = {
+export default {
   mergeConfig: {
     // following options will be merged
     module: {loaders: [/*...*/]},
@@ -119,7 +124,7 @@ module.exports = {
 }
 
 // or an array for merging multiple webpack config
-module.exports = {
+export default {
   mergeConfig: [
     a, b, c //...
   ]
@@ -131,7 +136,7 @@ We are using [webpack-merge](https://github.com/survivejs/webpack-merge) to fini
 For example, if you wanna override the webpack loader for js files, do:
 
 ```js
-module.exports = {
+export default {
   mergeConfig: {
     module: {
       loaders: [

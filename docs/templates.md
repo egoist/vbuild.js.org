@@ -3,6 +3,7 @@
 By default, we add a html-template-plugin for you to generate HTML output for all chunks:
 
 ```js
+// the default plugin for generating html output
 new HtmlWebpackPlugin({
   filename: _.cwd(`${options.dist}/index.html`),
   title: options.title || 'vbuild app',
@@ -18,11 +19,11 @@ new HtmlWebpackPlugin({
 
 And you can use `title` `template` options to adjust it.
 
-However, you may also want to generate other HTML files to exclude or include some chunks, this way you can use `templates` option, it's simply an array of options for html-webpack-plugin, we use it to insert multiple html-webpack-plugin into the webpack config.
+However, you may also want to generate other HTML files to exclude or include some chunks, this way you can use `templates` option, it's simply an array of options for html-webpack-plugin, we use it to insert multiple html-webpack-plugin into the webpack config's plugins property.
 
 ```js
 // vue.config.js
-{
+export default {
   templates: [
     {
       title: 'child homepage'
@@ -36,4 +37,4 @@ However, you may also want to generate other HTML files to exclude or include so
 }
 ```
 
-`title` `template` options do not work in `templates` option.
+`title` `template` options do not work if you are using `templates` option.

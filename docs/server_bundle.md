@@ -6,7 +6,7 @@ You are recommended to use [bundleRenderer](https://www.npmjs.com/package/vue-se
 - Exclude dependencies from the bundle file
 
 ```js
-module.exports = {
+export default {
   target: 'node',
   cjs: true,
   externals: Object.keys(require('./package.json').dependencies)

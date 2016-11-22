@@ -7,6 +7,7 @@
   * [Templates](templates.md)
 4. [Addons](addons.md)
 5. Recipes
+  * [Static files like favicon](static-files-like-favicon.md)
   * [Server bundle](server_bundle.md)
   * [Components](components.md)
   * [Non-Vue projects](non-vue-projects.md)

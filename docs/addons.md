@@ -11,7 +11,7 @@ You can use option `eslint` to run eslint during compilation, it defaults to use
 Most likely you only need eslint while building for production, since it might kill the process in development mode.
 
 ```js
-{
+export default {
   // add as `production` speicifed options
   // or you can use different config files for different builds
   production: {
@@ -33,7 +33,7 @@ You can pass all [eslint options](http://eslint.org/docs/developer-guide/nodejs-
 Prepare compressed versions of assets to serve them with Content-Encoding. See [Usage](https://github.com/webpack/compression-webpack-plugin#usage).
 
 ```js
-module.exports = {
+export default {
   production: {
     gzip: true,
     // or with options

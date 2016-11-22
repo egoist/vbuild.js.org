@@ -1,22 +1,22 @@
 # Components
 
-Bundle components should be easy, and it is. Here we don't need js, so just using json-format file is ok.
+Bundle components should be easy, and it is.
 
 ```js
-{
+export default {
   // umd format
-  "umd": "moduleName",
+  umd: 'moduleName',
   // cjs format
   // "cjs": true,
   // name of bundled file
-  "filename": "my-module",
+  filename: 'my-module',
   // do compress, you can turn it off though
-  "compress": true,
+  'compress': true,
   // all dependencies will be included in bundled file
   // to exclude them:
-  "externals": ["object-assign"],
+  'externals': ['object-assign'],
   // no source-map, please
-  "devtool": false
+  'devtool': false
 }
 ```
 

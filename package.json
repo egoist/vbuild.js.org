@@ -8,7 +8,7 @@
     "build": "vbuild && npm run docs",
     "deploy": "npm run build &&  npm run gh",
     "dev": "vbuild -d",
-    "gh": "cp CNAME dist/ && gh-pages -d dist",
+    "gh": "gh-pages -d dist",
     "docs": "gitbook build docs && cp -rf docs/_book ./dist/docs"
   },
   "keywords": [],
