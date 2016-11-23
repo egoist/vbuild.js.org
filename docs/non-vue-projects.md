@@ -1,20 +1,6 @@
 # Non-Vue Projects
 
-`vbuild` can be gracefully used to prototype a non-Vue project, simply disable `vendor` option:
-
-```bash
-vbuild --no-vendor
-```
-
-or in config file:
-
-```js
-module.exports = {
-  vendor: false
-}
-```
-
-Thus there won't be a `vendor` chunk which bundles `vue` into dist folder.
+`vbuild` can be gracefully used to prototype a non-Vue project.
 
 ## React Projects
 

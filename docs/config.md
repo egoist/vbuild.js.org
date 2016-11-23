@@ -41,7 +41,7 @@ electron|`false`|Run in electron mode
 alias|undefined|Add resolve alias
 resolve|undefined|Resolve dependencies in ./src path or a custom path
 target|webpack target|eg: node
-vendor|['vue']|Split modules or files in vendor chunk, for better caching
+vendor|[]|Split modules or files in vendor chunk, for better caching
 static|{from: 'static', to: './'}|copy files in ./static to the root of dist directory
 config|`./vue.config.js`|Path to config file, set to `false` to disable it
 
