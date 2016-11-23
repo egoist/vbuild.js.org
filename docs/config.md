@@ -122,6 +122,16 @@ export default {
 }
 ```
 
+Babel can also read config from `.babelrc`, if you're using it that way make sure to install presets and plugins in your project directory. To disable `.babelrc`, simply:
+
+```js
+export default {
+  babel: {
+    babelrc: false
+  }
+}
+```
+
 Note: change babel options for your app won't affect the options we use to load config file.
 
 ## Merge Webpack config
