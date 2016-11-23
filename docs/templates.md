@@ -5,7 +5,6 @@ By default, we add a html-template-plugin for you to generate HTML output for al
 ```js
 // the default plugin for generating html output
 new HtmlWebpackPlugin({
-  filename: _.cwd(`${options.dist}/index.html`),
   title: options.title || 'vbuild app',
   template: options.template ? _.cwd(options.template) : _.dir('lib/template.html'),
   inject: false,
