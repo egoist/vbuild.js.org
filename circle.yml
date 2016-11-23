@@ -12,4 +12,4 @@ dependencies:
   override:
     - yarn install
   post:
-    - yarn globall add egoist/vbuild
+    - yarn global add egoist/vbuild
