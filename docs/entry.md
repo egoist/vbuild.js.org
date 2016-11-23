@@ -8,7 +8,7 @@ The default entry looks like:
   // in hot reloading mode, the client entry is:
   // client: ['./src/index.js', '/path/to/webpack-hot-middleware/client'],
   // in production mode
-  // there will also be vendor entry if vendor options is not false
+  // there will also be vendor entry if `vendor` option is not false
   vendor: ['vue']
 }
 ```
@@ -29,7 +29,7 @@ export default {
 
 Don't worry about `vendor` entry, we'll automatically add it for you.
 
-Also, by default, only the `client` entry will enable hot-reloading, you can use the `hot` options to select the entries which need hot-reloading.
+Also, by default, only the `client` entry will enable hot-reloading, you can use the `hot` option to select the entries which need hot-reloading.
 
 ```js
 // vue.config.js

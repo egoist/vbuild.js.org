@@ -8,6 +8,7 @@
 4. [Addons](addons.md)
 5. Recipes
   * [Static files like favicon](static-files-like-favicon.md)
+  * [Pre-processors in single file component](preprocessors-in-single-file-component.md)
   * [Server bundle](server_bundle.md)
   * [Components](components.md)
   * [Non-Vue projects](non-vue-projects.md)
