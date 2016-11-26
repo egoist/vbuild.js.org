@@ -14,12 +14,26 @@ You can also change the folder name you want for `static` folder, as well as the
 ```js
 export default {
   static: {
+    // `from` is relative to `./`
     from: 'public',
+    // `to` is relative to `./dist`
     to: './'
   }
 }
 ```
 
 Now everything inside `./public` will be copied to './dist'.
+
+You can also use an array as `static` option to totally override the default one and copy more directories.
+
+
+```js
+export default {
+  static: [
+    {from: './src/assets', to: './assets'},
+    {from: './static', to: './'}
+  ]
+}
+```
 
 You can find the option definitions at [copy-webpack-plugin](https://github.com/kevlened/copy-webpack-plugin#pattern-properties).

@@ -8,8 +8,9 @@ The default entry looks like:
   // in hot reloading mode, the client entry is:
   // client: ['./src/index.js', '/path/to/webpack-hot-middleware/client'],
   // in production mode
-  // there will also be vendor entry if `vendor` option is not false
-  vendor: ['vue']
+  // you can also use `vendor` option to bundle common dependencies in a single chunk called `vendor` other than `client` chunk
+  vendor: undefined
+  // eg: set vendor: ['vue', 'vue-router', 'vuex'] in config file
 }
 ```
 

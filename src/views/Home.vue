@@ -51,7 +51,7 @@
 
     <section class="slide" id="slide4">
       <h1>Optionally, config file, the easy way</h1>
-      <window title="~/my-project/vue.config.json">
+      <window title="~/my-project/vue.config.js">
         <code-block :code="configExampleCode"></code-block>
       </window>
       <jump to="#slide5"></jump>
@@ -92,14 +92,13 @@ new Vue({
 $ ~/my-project vbuild --dev
 
 > vbuild app is running at http://localhost:4000`,
-        configExampleCode: `// In fact, there're few things you need to config!
-{
-  "title": "My Awesome Project",
-  "dist": "./public",
-  "postcss": {
-    "use": ["postcss-mixins", "postcss-simple-vars"],
-    "autoprefixer": {
-      "browsers": ["ie > 10"]
+        configExampleCode: `// In fact, you don't need to config things until you really need!
+export default {
+  title: 'My Awesome Project',
+  postcss: {
+    use: ['postcss-mixins', 'postcss-simple-vars'],
+    autoprefixer: {
+      browsers: ['ie > 10']
     }
   }
   // ...
