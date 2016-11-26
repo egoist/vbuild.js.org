@@ -16,3 +16,20 @@ npm install sass-loader node-sass -D
 ```
 
 And you're all set!
+
+## Autoprefix
+
+No matter what CSS pre-processors you're using, the compiled css will be passed to `postcss-loader.`
+
+So simply set `autoprefixer` option in `postcss` property:
+
+```js
+// vue.config.js
+export default {
+  postcss: {
+    autoprefixer: {
+      browsers: ['ie > 9', 'chrome > 42']
+    }
+  }
+}
+```
