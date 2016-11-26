@@ -63,6 +63,7 @@ Development indicates one of `--dev` and `--watch`
 name|default|description
 ---|---|---
 devtool|`eval-source-map`|Devtool
+port|4000|The port for dev server
 live|`false`|Live reloading instead hot reloading (dev mode only)
 open|`false`|Open app in browser
 host|`localhost`|The hostname for dev server
