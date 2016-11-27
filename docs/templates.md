@@ -11,26 +11,36 @@ new HtmlWebpackPlugin({
   minify: {
     removeComments: true,
     collapseWhitespace: true,
-    removeAttributeQuotes: true
-  }
+    removeAttributeQuotes: true,
+    minifyJS: true,
+    minifyCSS: true
+  },
+  ga: options.ga || options.analytics || options.googleAnalytics
 })
 ```
 
 And you can use `title` `template` options to adjust it.
 
+- `title`: The content of `<title>` in html output
+- `template`: THe path to your custom HTML template
+
 Check out the default [template.html](https://github.com/egoist/vbuild/blob/master/lib/template.html) we use, it supports the [ejs](http://ejs.co/) syntax and the [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) options.
 
-However, you may also want to generate other HTML files to exclude or include some chunks, then you can use `templates` option, it's simply an array of options for html-webpack-plugin, we use it to insert multiple html-webpack-plugin into the webpack config's plugins property.
+The `template` could also be an object which represents the html-webpack-plugin options.
+
+You may also want to generate other HTML files to exclude or include some chunks, then you can use `templates` option, it's simply an array of options for html-webpack-plugin, we use it to insert multiple html-webpack-plugin into the webpack config's plugins property, and sure it inherits from the default html-webpack-plugin option we mentioned above:
 
 ```js
 // vue.config.js
 export default {
+  title: 'default title',
   templates: [
     {
-      title: 'child homepage'
+      // this inherits default title
       chunks: ['some chunk names']
     },
     {
+      // the html output has different title
       title: 'app',
       chunks: ['client', 'vendor']
     }
@@ -38,4 +48,6 @@ export default {
 }
 ```
 
-`title` `template` options do not work if you are using `templates` option.
+## Google Analytics
+
+[Checkout the recipe about this.](/ga.md)
