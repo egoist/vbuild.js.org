@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Showcase · GitBook</title>
+        <title>Google Analytics · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="server_bundle.html" />
     
-    <link rel="prev" href="non-vue-projects.html" />
+    
+    <link rel="prev" href="preprocessors-in-single-file-component.html" />
     
 
     </head>
@@ -215,7 +217,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="ga.html">
+        <li class="chapter active" data-level="1.5.3" data-path="ga.html">
             
                 <a href="ga.html">
             
@@ -272,7 +274,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="showcase.html">
+        <li class="chapter " data-level="1.6" data-path="showcase.html">
             
                 <a href="showcase.html">
             
@@ -315,7 +317,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Showcase</a>
+        <a href="." >Google Analytics</a>
     </h1>
 </div>
 
@@ -330,12 +332,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="showcase"><a name="showcase" class="plugin-anchor" href="#showcase"><i class="fa fa-link" aria-hidden="true"></i></a>Showcase</h1>
-<p>The websites that are building with <code>vbuild</code>:</p>
-<ul>
-<li><a href="https://vbuild.js.org" target="_blank">vbuild.js.org</a> - <a href="https://github.com/egoist/vbuild.js.org" target="_blank">source</a></li>
-<li><a href="https://texy.surge.sh" target="_blank">Texy</a> - <a href="https://github.com/egoist/texy" target="_blank">source</a></li>
-</ul>
+                                <h1 id="google-analytics"><a name="google-analytics" class="plugin-anchor" href="#google-analytics"><i class="fa fa-link" aria-hidden="true"></i></a>Google Analytics</h1>
+<p>You can set <code>ga</code> option to your Google Analytics track ID to enable this feature:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// vue.config.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  ga: <span class="hljs-string">&apos;UA-5384829-10&apos;</span>
+}
+</code></pre>
+<p>Since you&apos;re most likely building a Single Page App, check out  <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/single-page-applications" target="_blank">Single Page Application Tracking</a> for using Google Analytics with SPA.</p>
 
                                 
                                 </section>
@@ -363,10 +367,14 @@
 
             
                 
-                <a href="non-vue-projects.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Non-Vue projects">
+                <a href="preprocessors-in-single-file-component.html" class="navigation navigation-prev " aria-label="Previous page: Pre-processors in single file component">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="server_bundle.html" class="navigation navigation-next " aria-label="Next page: Server bundle">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -375,7 +383,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Showcase","level":"1.6","depth":1,"previous":{"title":"Non-Vue projects","level":"1.5.6","depth":2,"path":"non-vue-projects.md","ref":"non-vue-projects.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"showcase.md","mtime":"2016-11-27T08:37:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-27T14:57:26.166Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Google Analytics","level":"1.5.3","depth":2,"next":{"title":"Server bundle","level":"1.5.4","depth":2,"path":"server_bundle.md","ref":"server_bundle.md","articles":[]},"previous":{"title":"Pre-processors in single file component","level":"1.5.2","depth":2,"path":"preprocessors-in-single-file-component.md","ref":"preprocessors-in-single-file-component.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ga.md","mtime":"2016-11-27T14:56:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-27T14:57:26.166Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -217,7 +217,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="server_bundle.html">
+        <li class="chapter " data-level="1.5.3" data-path="ga.html">
+            
+                <a href="ga.html">
+            
+                    
+                    Google Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="server_bundle.html">
             
                 <a href="server_bundle.html">
             
@@ -230,7 +243,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="components.html">
+        <li class="chapter " data-level="1.5.5" data-path="components.html">
             
                 <a href="components.html">
             
@@ -243,7 +256,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="non-vue-projects.html">
+        <li class="chapter " data-level="1.5.6" data-path="non-vue-projects.html">
             
                 <a href="non-vue-projects.html">
             
@@ -329,28 +342,39 @@
   minify: {
     removeComments: <span class="hljs-literal">true</span>,
     collapseWhitespace: <span class="hljs-literal">true</span>,
-    removeAttributeQuotes: <span class="hljs-literal">true</span>
-  }
+    removeAttributeQuotes: <span class="hljs-literal">true</span>,
+    minifyJS: <span class="hljs-literal">true</span>,
+    minifyCSS: <span class="hljs-literal">true</span>
+  },
+  ga: options.ga || options.analytics || options.googleAnalytics
 })
 </code></pre>
 <p>And you can use <code>title</code> <code>template</code> options to adjust it.</p>
+<ul>
+<li><code>title</code>: The content of <code>&lt;title&gt;</code> in html output</li>
+<li><code>template</code>: THe path to your custom HTML template</li>
+</ul>
 <p>Check out the default <a href="https://github.com/egoist/vbuild/blob/master/lib/template.html" target="_blank">template.html</a> we use, it supports the <a href="http://ejs.co/" target="_blank">ejs</a> syntax and the <a href="https://github.com/ampedandwired/html-webpack-plugin" target="_blank">html-webpack-plugin</a> options.</p>
-<p>However, you may also want to generate other HTML files to exclude or include some chunks, then you can use <code>templates</code> option, it&apos;s simply an array of options for html-webpack-plugin, we use it to insert multiple html-webpack-plugin into the webpack config&apos;s plugins property.</p>
+<p>The <code>template</code> could also be an object which represents the html-webpack-plugin options, in this way, the <code>title</code> option will no longer work.</p>
+<p>You may also want to generate other HTML files to exclude or include some chunks, then you can use <code>templates</code> option, it&apos;s simply an array of options for html-webpack-plugin, we use it to insert multiple html-webpack-plugin into the webpack config&apos;s plugins property.</p>
 <pre><code class="lang-js"><span class="hljs-comment">// vue.config.js</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  title: <span class="hljs-string">&apos;default title&apos;</span>,
   templates: [
     {
-      title: <span class="hljs-string">&apos;child homepage&apos;</span>
+      <span class="hljs-comment">// this inherits default title,</span>
       chunks: [<span class="hljs-string">&apos;some chunk names&apos;</span>]
     },
     {
+      <span class="hljs-comment">// the html output has different title</span>
       title: <span class="hljs-string">&apos;app&apos;</span>,
       chunks: [<span class="hljs-string">&apos;client&apos;</span>, <span class="hljs-string">&apos;vendor&apos;</span>]
     }
   ]
 }
 </code></pre>
-<p><code>title</code> <code>template</code> options do not work if you are using <code>templates</code> option.</p>
+<h2 id="google-analytics"><a name="google-analytics" class="plugin-anchor" href="#google-analytics"><i class="fa fa-link" aria-hidden="true"></i></a>Google Analytics</h2>
+<p><a href="ga.html">Checkout the recipe about this.</a></p>
 
                                 
                                 </section>
@@ -394,7 +418,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Templates","level":"1.3.2","depth":2,"next":{"title":"Addons","level":"1.4","depth":1,"path":"addons.md","ref":"addons.md","articles":[]},"previous":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templates.md","mtime":"2016-11-26T07:16:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-27T08:37:33.706Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Templates","level":"1.3.2","depth":2,"next":{"title":"Addons","level":"1.4","depth":1,"path":"addons.md","ref":"addons.md","articles":[]},"previous":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templates.md","mtime":"2016-11-27T14:54:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-27T14:57:26.166Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
