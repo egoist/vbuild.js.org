@@ -38,6 +38,7 @@ cssModules|`false`|Use css-modules to load css files
 filename|`client`|Name of bundled files, without extension
 notify|`true`|Notify when compilation is done
 electron|`false`|Run in electron mode
+html|`true`|Generate HTML files
 alias|undefined|Add resolve alias
 resolve|undefined|Resolve dependencies in ./src path or a custom path
 target|webpack target|eg: node
@@ -55,6 +56,7 @@ name|default|description
 devtool|`source-map`|Devtool
 compress|`true`|Compress bundled files
 clean|`true`|Remove dist folder before bundling
+hash|`true`|Add hash to file name
 publicPath|`/`|Set the publicPath to static files, use this when you put your website in a subdirectory
 
 ## Development options
