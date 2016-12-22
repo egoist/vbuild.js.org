@@ -19,7 +19,7 @@ And you're all set!
 
 ## Autoprefix
 
-No matter what CSS pre-processors you're using, the compiled css will be passed to `postcss-loader.`
+No matter what CSS pre-processors you're using, the compiled css (in single file component) will be passed to `postcss-loader.`
 
 So simply set `autoprefixer` option in `postcss` property:
 

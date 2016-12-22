@@ -148,7 +148,7 @@ You can also use an object as its value:
 export default {
   mergeConfig: {
     // following options will be merged
-    module: {loaders: [/*...*/]},
+    module: {rules: [/*...*/]},
     plugins: [myPlugin()]
   }
 }
@@ -169,10 +169,10 @@ For example, if you wanna override the webpack loader for js files, do:
 export default {
   mergeConfig: {
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
-          loaders: ['react-hot', 'babel'],
+          loaders: ['react-hot-loader', 'babel-loader'],
           exclude: [/node_modules/]
         }
       ]
