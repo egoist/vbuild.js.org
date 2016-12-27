@@ -72,6 +72,7 @@ open|`false`|Open app in browser
 host|`localhost`|The hostname for dev server
 hot|`['client']`|Add hot-reload client to client entry or custom entries
 devServer|`undefined`|A function that takes the `express()` server as the argument, eg, you can use this function to add a proxy middleware 
+proxy|`undefined`|Proxy any unknown requests to specified proxy URL
 
 ## PostCSS options
 
