@@ -5,6 +5,7 @@
 3. [Config](config.md)
   * [Entry](entry.md)
   * [Templates](templates.md)
+  * [Proxying API Requests](proxy.md)
 4. [Addons](addons.md)
 5. Recipes
   * [Static files like favicon](static-files-like-favicon.md)
