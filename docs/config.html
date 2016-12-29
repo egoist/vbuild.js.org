@@ -367,10 +367,11 @@
 <li><a href="#postcss-options">PostCSS options</a></li>
 <li><a href="#babel-options">Babel options</a></li>
 <li><a href="#merge-webpack-config">Merge Webpack config</a></li>
+<li><a href="#update-webpack-config-directly">Update Webpack Config Directly</a></li>
 </ul>
 <!-- toc stop -->
 <h2 id="shared-options"><a name="shared-options" class="plugin-anchor" href="#shared-options"><i class="fa fa-link" aria-hidden="true"></i></a>Shared options</h2>
-<p>The shared options affect <code>vbuild</code>  <code>vbuild --dev</code> <code>vbuild --watch</code></p>
+<p>The shared options affect <code>vbuild</code>  <code>vbuild --dev</code></p>
 <table>
 <thead>
 <tr>
@@ -432,7 +433,7 @@
 </tr>
 <tr>
 <td>notify</td>
-<td><code>true</code></td>
+<td><code>false</code></td>
 <td>Notify when compilation is done</td>
 </tr>
 <tr>
@@ -483,7 +484,7 @@
 </tbody>
 </table>
 <h2 id="production-options"><a name="production-options" class="plugin-anchor" href="#production-options"><i class="fa fa-link" aria-hidden="true"></i></a>Production options</h2>
-<p>Prudction mode indicates no <code>--dev</code> <code>--watch</code></p>
+<p>Prudction mode indicates no <code>--dev</code></p>
 <table>
 <thead>
 <tr>
@@ -521,7 +522,7 @@
 </tbody>
 </table>
 <h2 id="development-options"><a name="development-options" class="plugin-anchor" href="#development-options"><i class="fa fa-link" aria-hidden="true"></i></a>Development options</h2>
-<p>Development indicates one of <code>--dev</code> and <code>--watch</code></p>
+<p>Development indicates <code>--dev</code></p>
 <table>
 <thead>
 <tr>
@@ -569,45 +570,11 @@
 </tbody>
 </table>
 <h2 id="postcss-options"><a name="postcss-options" class="plugin-anchor" href="#postcss-options"><i class="fa fa-link" aria-hidden="true"></i></a>PostCSS options</h2>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>default</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>postcss.autoprefixer</td>
-<td>undefined</td>
-<td>Autoprefixer options</td>
-</tr>
-<tr>
-<td>postcss.use</td>
-<td>[&apos;autoprefixer&apos;, &apos;postcss-nested&apos;]</td>
-<td>PostCSS plugins</td>
-</tr>
-<tr>
-<td>postcss.append</td>
-<td>true</td>
-<td>Append your plugins to built-in plugins</td>
-</tr>
-</tbody>
-</table>
-<p>There are two ways of define postcss options:</p>
+<p><code>autoprefixer</code> and <code>postcss-nested</code> are default PostCSS plugins we use, to use your own plugins, simply:</p>
 <pre><code class="lang-js"><span class="hljs-comment">// vue.config.js</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  postcss: {
-    use: [<span class="hljs-string">&apos;postcss-cssnext&apos;</span>],
-    <span class="hljs-string">&apos;postcss-cssnext&apos;</span>: {}, <span class="hljs-comment">// options for that plugin</span>
-    append: <span class="hljs-literal">false</span>
-  }
-}
-<span class="hljs-comment">// or use postcss api directly</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  postcss(webpack) {
-    <span class="hljs-keyword">return</span> [] <span class="hljs-comment">// plugins</span>
+  postcss(defaultPlugins) {
+    <span class="hljs-keyword">return</span> defaultPlugins.concat(yourPlugins)
   }
 }
 </code></pre>
@@ -635,22 +602,12 @@
 </code></pre>
 <p>If you wanna override this you need to <code>require.resolve</code> in your config file:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  babel: {
-    presets: [
-      [<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;babel-preset-es2015&apos;</span>), {modules: <span class="hljs-literal">false</span>}],
-      <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;babel-preset-stage-0&apos;</span>)
-    ]
+  babel(defaultBabelOptions) {
+    <span class="hljs-keyword">return</span> {presets: []}
   }
 }
 </code></pre>
-<p>Babel can also read config from <code>.babelrc</code>, if you&apos;re using it that way make sure to install presets and plugins in your project directory. To disable <code>.babelrc</code>, simply:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-  babel: {
-    babelrc: <span class="hljs-literal">false</span>
-  }
-}
-</code></pre>
-<p>Note: change babel options for your app won&apos;t affect the options we use to load config file.</p>
+<p>Babel can also read config from <code>.babelrc</code>.</p>
 <h2 id="merge-webpack-config"><a name="merge-webpack-config" class="plugin-anchor" href="#merge-webpack-config"><i class="fa fa-link" aria-hidden="true"></i></a>Merge Webpack config</h2>
 <p>For advanced usage, you can merge your webpack config into the default one vbuild uses, simply use <code>--merge-config ./my.webpack.config.js</code> option.</p>
 <p>You can also use an object as its value:</p>
@@ -686,6 +643,19 @@
 }
 </code></pre>
 <p>BTW, you can directly <code>require(&apos;webpack&apos;)</code> and all vbuild&apos;s <a href="https://github.com/egoist/vbuild/blob/master/package.json" target="_blank">dependencies</a> without installing them again in your project.</p>
+<h2 id="update-webpack-config-directly"><a name="update-webpack-config-directly" class="plugin-anchor" href="#update-webpack-config-directly"><i class="fa fa-link" aria-hidden="true"></i></a>Update Webpack Config Directly</h2>
+<p>Alternatively, if you don&apos;t like <code>mergeConfig</code> option, you can use <code>webpack</code> function to update default webpack config:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  webpack(defaultWebpackConfig, options) {
+    <span class="hljs-keyword">if</span> (!options.dev) {
+      defaultWebpackConfig.devtool = <span class="hljs-literal">false</span>
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// other operations...</span>
+    }
+    <span class="hljs-keyword">return</span> defaultWebpackConfig
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -729,7 +699,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-12-22T03:56:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-24T11:56:40.183Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Config","level":"1.3","depth":1,"next":{"title":"Entry","level":"1.3.1","depth":2,"path":"entry.md","ref":"entry.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"path":"getting-started.md","ref":"getting-started.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config.md","mtime":"2016-12-29T11:52:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-29T11:56:37.923Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
