@@ -9,6 +9,7 @@
     "deploy": "npm run build &&  npm run gh",
     "dev": "vbuild -d",
     "gh": "gh-pages -d dist",
+    "gitbook": "gitbook serve docs",
     "docs": "gitbook build docs && cp -rf docs/_book ./dist/docs"
   },
   "keywords": [],

@@ -22,7 +22,7 @@ export default {
 
 ## Shared options
 
-The shared options affect `vbuild`  `vbuild --dev` `vbuild --watch`
+The shared options affect `vbuild`  `vbuild --dev`
 
 name|default|description
 ---|---|---
@@ -36,7 +36,7 @@ cjs|`false`|Bundle in `CommonJS` format
 umd|`false`|Bundle in `umd` format and set a moduleName
 cssModules|`false`|Use css-modules to load css files
 filename|`client`|Name of bundled files, without extension
-notify|`true`|Notify when compilation is done
+notify|`false`|Notify when compilation is done
 electron|`false`|Run in electron mode
 html|`true`|Generate HTML files
 alias|undefined|Add resolve alias
@@ -49,7 +49,7 @@ config|`./vue.config.js`|Path to config file, set to `false` to disable it
 
 ## Production options
 
-Prudction mode indicates no `--dev` `--watch`
+Prudction mode indicates no `--dev`
 
 name|default|description
 ---|---|---
@@ -61,7 +61,7 @@ publicPath|`/`|Set the publicPath to static files, use this when you put your we
 
 ## Development options
 
-Development indicates one of `--dev` and `--watch`
+Development indicates `--dev`
 
 name|default|description
 ---|---|---
@@ -76,27 +76,14 @@ proxy|`undefined`|Proxy any unknown requests to specified proxy URL
 
 ## PostCSS options
 
-name|default|description
----|---|---
-postcss.autoprefixer|undefined|Autoprefixer options
-postcss.use|['autoprefixer', 'postcss-nested']|PostCSS plugins
-postcss.append|true|Append your plugins to built-in plugins
+`autoprefixer` and `postcss-nested` are default PostCSS plugins we use, to use your own plugins, simply:
 
-There are two ways of define postcss options:
 
 ```js
 // vue.config.js
 export default {
-  postcss: {
-    use: ['postcss-cssnext'],
-    'postcss-cssnext': {}, // options for that plugin
-    append: false
-  }
-}
-// or use postcss api directly
-export default {
-  postcss(webpack) {
-    return [] // plugins
+  postcss(defaultPlugins) {
+    return defaultPlugins.concat(yourPlugins)
   }
 }
 ```
@@ -118,26 +105,13 @@ If you wanna override this you need to `require.resolve` in your config file:
 
 ```js
 export default {
-  babel: {
-    presets: [
-      [require.resolve('babel-preset-es2015'), {modules: false}],
-      require.resolve('babel-preset-stage-0')
-    ]
+  babel(defaultBabelOptions) {
+    return {presets: []}
   }
 }
 ```
 
-Babel can also read config from `.babelrc`, if you're using it that way make sure to install presets and plugins in your project directory. To disable `.babelrc`, simply:
-
-```js
-export default {
-  babel: {
-    babelrc: false
-  }
-}
-```
-
-Note: change babel options for your app won't affect the options we use to load config file.
+Babel can also read config from `.babelrc`.
 
 ## Merge Webpack config
 
@@ -183,3 +157,20 @@ export default {
 ```
 
 BTW, you can directly `require('webpack')` and all vbuild's [dependencies](https://github.com/egoist/vbuild/blob/master/package.json) without installing them again in your project.
+
+## Update Webpack Config Directly
+
+Alternatively, if you don't like `mergeConfig` option, you can use `webpack` function to update default webpack config:
+
+```js
+export default {
+  webpack(defaultWebpackConfig, options) {
+    if (!options.dev) {
+      defaultWebpackConfig.devtool = false
+    } else {
+      // other operations...
+    }
+    return defaultWebpackConfig
+  }
+}
+```

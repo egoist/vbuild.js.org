@@ -36,14 +36,10 @@ Your app is ready to be deployed!
 
 ## Modes
 
-There's are 3 modes in vbuild, and 2 of them you will use often:
+There's are only 2 modes in vbuild:
 
 - production mode - `vbuild`: build for production use
-- dev mode - `vbuild --dev`: run a dev server with hot reloading support, optionally you can switch to `live` reloading
-
-The other one is:
-
-- watch mode - `vbuild --watch` like production mode but output files are not minified and it will rebuild due to file changes
+- dev mode - `vbuild --dev`: run a dev server with hot reloading support, optionally you can switch to `live` reloading with `--live` option
 
 ## Customize
 
