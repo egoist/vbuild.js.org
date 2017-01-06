@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Non-Vue projects · GitBook</title>
+        <title>Proxying API Requests · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="showcase.html" />
+    <link rel="next" href="addons.html" />
     
     
-    <link rel="prev" href="components.html" />
+    <link rel="prev" href="templates.html" />
     
 
     </head>
@@ -159,7 +159,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="proxy.html">
+        <li class="chapter active" data-level="1.3.3" data-path="proxy.html">
             
                 <a href="proxy.html">
             
@@ -282,7 +282,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.7" data-path="non-vue-projects.html">
+        <li class="chapter " data-level="1.5.7" data-path="non-vue-projects.html">
             
                 <a href="non-vue-projects.html">
             
@@ -343,7 +343,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Non-Vue projects</a>
+        <a href="." >Proxying API Requests</a>
     </h1>
 </div>
 
@@ -358,12 +358,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="non-vue-projects"><a name="non-vue-projects" class="plugin-anchor" href="#non-vue-projects"><i class="fa fa-link" aria-hidden="true"></i></a>Non-Vue Projects</h1>
-<p><code>vbuild</code> can be gracefully used to prototype a non-Vue project.</p>
-<h2 id="react-projects"><a name="react-projects" class="plugin-anchor" href="#react-projects"><i class="fa fa-link" aria-hidden="true"></i></a>React Projects</h2>
-<p>If you&apos;re using React JSX syntax, you would like to update babel plugins for this, see <a href="config.html#babel-options">babel options</a>.</p>
-<p>In this case, you may set the vendor option to <code>[&apos;react&apos;, &apos;react-dom&apos;]</code> and more.</p>
-<p>If you want to enable hot reloading for React components, check out the <a href="config.html#merge-webpack-config">merge webpack config</a> part.</p>
+                                <h2 id="proxying-api-requests-in-development"><a name="proxying-api-requests-in-development" class="plugin-anchor" href="#proxying-api-requests-in-development"><i class="fa fa-link" aria-hidden="true"></i></a>Proxying API Requests in Development</h2>
+<p>It can be convenient to serve front-end app from the same host and port as a backend implementation.<br>
+For example, a production setup might look like this after the app is deployed:</p>
+<pre><code>/             - static server returns index.html with front-end app
+/todos        - static server returns index.html with front-end app
+/api/todos    - server handles any /api/* requests using the backend implementation
+</code></pre><p>Such setup is <strong>not</strong> required. However, if you <strong>do</strong> have a setup like this, it is convenient to write requests like <code>fetch(&apos;/api/todos&apos;)</code> without worrying about redirecting them to another host or port during development.</p>
+<p>To tell the development server to proxy any unknown requests to your API server in development, add a <code>proxy</code> field to your <code>package.json</code>, for example:</p>
+<pre><code class="lang-js">  <span class="hljs-string">&quot;proxy&quot;</span>: <span class="hljs-string">&quot;http://localhost:5000&quot;</span>,
+</code></pre>
+<p>This way, when you <code>fetch(&apos;/api/todos&apos;)</code> in development, the development server will recognize that it&#x2019;s not a static asset, and will proxy your request to <code>http://localhost:5000/api/todos</code> as a fallback. The development server will only attempt to send requests without a <code>text/html</code> accept header to the proxy.</p>
+<p>Keep in mind that <code>proxy</code> only has effect in development (with <code>npm start</code>), and it is up to you to ensure that URLs like <code>/api/todos</code> point to the right thing in production. You don&#x2019;t have to use the <code>/api</code> prefix. Any unrecognized request without a <code>text/html</code> accept header will be redirected to the specified <code>proxy</code>.</p>
 
                                 
                                 </section>
@@ -391,12 +397,12 @@
 
             
                 
-                <a href="components.html" class="navigation navigation-prev " aria-label="Previous page: Components">
+                <a href="templates.html" class="navigation navigation-prev " aria-label="Previous page: Templates">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="showcase.html" class="navigation navigation-next " aria-label="Next page: Showcase">
+                <a href="addons.html" class="navigation navigation-next " aria-label="Next page: Addons">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -407,7 +413,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Non-Vue projects","level":"1.5.7","depth":2,"next":{"title":"Showcase","level":"1.6","depth":1,"path":"showcase.md","ref":"showcase.md","articles":[]},"previous":{"title":"Components","level":"1.5.6","depth":2,"path":"components.md","ref":"components.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"non-vue-projects.md","mtime":"2016-11-23T11:22:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T06:03:05.331Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Proxying API Requests","level":"1.3.3","depth":2,"next":{"title":"Addons","level":"1.4","depth":1,"path":"addons.md","ref":"addons.md","articles":[]},"previous":{"title":"Templates","level":"1.3.2","depth":2,"path":"templates.md","ref":"templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"proxy.md","mtime":"2016-12-29T11:58:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T06:04:45.288Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Non-Vue projects · GitBook</title>
+        <title>Pre-processors in single file component · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="showcase.html" />
+    <link rel="next" href="ga.html" />
     
     
-    <link rel="prev" href="components.html" />
+    <link rel="prev" href="split-vendor-and-app-code.html" />
     
 
     </head>
@@ -230,7 +230,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="preprocessors-in-single-file-component.html">
+        <li class="chapter active" data-level="1.5.3" data-path="preprocessors-in-single-file-component.html">
             
                 <a href="preprocessors-in-single-file-component.html">
             
@@ -282,7 +282,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.7" data-path="non-vue-projects.html">
+        <li class="chapter " data-level="1.5.7" data-path="non-vue-projects.html">
             
                 <a href="non-vue-projects.html">
             
@@ -343,7 +343,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Non-Vue projects</a>
+        <a href="." >Pre-processors in single file component</a>
     </h1>
 </div>
 
@@ -358,12 +358,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="non-vue-projects"><a name="non-vue-projects" class="plugin-anchor" href="#non-vue-projects"><i class="fa fa-link" aria-hidden="true"></i></a>Non-Vue Projects</h1>
-<p><code>vbuild</code> can be gracefully used to prototype a non-Vue project.</p>
-<h2 id="react-projects"><a name="react-projects" class="plugin-anchor" href="#react-projects"><i class="fa fa-link" aria-hidden="true"></i></a>React Projects</h2>
-<p>If you&apos;re using React JSX syntax, you would like to update babel plugins for this, see <a href="config.html#babel-options">babel options</a>.</p>
-<p>In this case, you may set the vendor option to <code>[&apos;react&apos;, &apos;react-dom&apos;]</code> and more.</p>
-<p>If you want to enable hot reloading for React components, check out the <a href="config.html#merge-webpack-config">merge webpack config</a> part.</p>
+                                <h1 id="pre-processors"><a name="pre-processors" class="plugin-anchor" href="#pre-processors"><i class="fa fa-link" aria-hidden="true"></i></a>Pre-processors</h1>
+<p>It&apos;s exactly the same way as that in regular Vue project, check out the <a href="http://vue-loader.vuejs.org/en/configurations/pre-processors.html" target="_blank">vue-loader</a> doc for this, for example:</p>
+<p>A Sass project:</p>
+<pre><code class="lang-bash">npm install sass-loader node-sass -D
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;sass&quot;</span>&gt;</span><span class="undefined">
+  $color: red;
+  body {color: $color;}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>And you&apos;re all set!</p>
+<h2 id="autoprefix"><a name="autoprefix" class="plugin-anchor" href="#autoprefix"><i class="fa fa-link" aria-hidden="true"></i></a>Autoprefix</h2>
+<p>No matter what CSS pre-processors you&apos;re using, the compiled css (in single file component) will be passed to <code>postcss-loader.</code></p>
+<p>So simply set <code>autoprefixer</code> option in <code>postcss</code> property:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// vue.config.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  postcss: {
+    autoprefixer: {
+      browsers: [<span class="hljs-string">&apos;ie &gt; 9&apos;</span>, <span class="hljs-string">&apos;chrome &gt; 42&apos;</span>]
+    }
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -391,12 +408,12 @@
 
             
                 
-                <a href="components.html" class="navigation navigation-prev " aria-label="Previous page: Components">
+                <a href="split-vendor-and-app-code.html" class="navigation navigation-prev " aria-label="Previous page: Split vendor and app code">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="showcase.html" class="navigation navigation-next " aria-label="Next page: Showcase">
+                <a href="ga.html" class="navigation navigation-next " aria-label="Next page: Google Analytics">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -407,7 +424,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Non-Vue projects","level":"1.5.7","depth":2,"next":{"title":"Showcase","level":"1.6","depth":1,"path":"showcase.md","ref":"showcase.md","articles":[]},"previous":{"title":"Components","level":"1.5.6","depth":2,"path":"components.md","ref":"components.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"non-vue-projects.md","mtime":"2016-11-23T11:22:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T06:03:05.331Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pre-processors in single file component","level":"1.5.3","depth":2,"next":{"title":"Google Analytics","level":"1.5.4","depth":2,"path":"ga.md","ref":"ga.md","articles":[]},"previous":{"title":"Split vendor and app code","level":"1.5.2","depth":2,"path":"split-vendor-and-app-code.md","ref":"split-vendor-and-app-code.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","edit-link","anchors","toc"],"pluginsConfig":{"github":{"url":"https://github.com/egoist/vbuild"},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/egoist/vbuild.js.org/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"preprocessors-in-single-file-component.md","mtime":"2016-12-22T03:49:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T06:04:45.288Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
