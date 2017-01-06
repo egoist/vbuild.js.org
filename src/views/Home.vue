@@ -95,11 +95,10 @@ $ ~/my-project vbuild --dev
         configExampleCode: `// In fact, you don't need to config things until you really need!
 export default {
   title: 'My Awesome Project',
-  postcss: {
-    use: ['postcss-mixins', 'postcss-simple-vars'],
-    autoprefixer: {
-      browsers: ['ie > 10']
-    }
+  postcss() {
+    return [
+      require('postcss-cssnext')()
+  ]
   }
   // ...
 }`
