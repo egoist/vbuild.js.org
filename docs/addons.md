@@ -20,7 +20,7 @@ export default {
     // __or__
     eslint: {
       // use a desired config
-      configFile: require.resolve('eslint-config-airbnb')
+      configFile: 'eslint-config-airbnb'
     }
   }
 }
