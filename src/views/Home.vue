@@ -85,7 +85,7 @@ new Vue({
   el: '#app',
   render: h => h(Counter)
 })`,
-        exampleCommand: `$ npm install -g vbuild
+        exampleCommand: `$ yarn global add vbuild
 $ ~/my-project vbuild --dev
 
 > Open http://localhost:4000`,
