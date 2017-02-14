@@ -5,7 +5,7 @@
     <section class="slide" id="slide0">
       <h1 class="site-name">
         <span class="title"><strong>vbuild:</strong> Install once, Build everywhere</span><br>
-        <span class="description">Vue happiness build tool</span>
+        <span class="description">Refined webpack development experience for Vue.js</span>
       </h1>
 
       <div class="actions">
