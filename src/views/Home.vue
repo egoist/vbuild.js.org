@@ -95,7 +95,10 @@ module.exports = {
     title: 'My Awesome Project',
   }
   // ...
-}`
+}
+
+// The equivalent of this in CLI options is:
+// vbuild --html.title "My Awesome Project"`
       }
     },
     computed: {
