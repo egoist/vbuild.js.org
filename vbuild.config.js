@@ -6,21 +6,21 @@ module.exports = (options, req) => ({
     title: 'vbuild: Install once, Build everywhere',
     template: './index.html'
   },
-  vendor: [
-    'vue',
-    'vuex',
-    'vue-router',
-    'in-view',
-    'jump.js'
-  ],
   postcss: [
     req('autoprefixer')({
       browsers: ['last 4 versions', 'ie > 8']
     }),
     require('postcss-nested')
   ],
-  webpack(cfg) {
-    cfg.resolve.modules.push(path.resolve('src'))
-    return cfg
+  webpack: {
+    resolve: {
+      alias: {
+        vue$: 'vue/dist/vue'
+      },
+      modules: [path.resolve('src')]
+    }
+  },
+  eslintConfig: {
+    globals: ['ga']
   }
 })

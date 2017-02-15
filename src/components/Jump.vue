@@ -11,7 +11,7 @@
 
   export default {
     props: {
-      to: String,
+      to: String
     },
     methods: {
       jumpTo() {
