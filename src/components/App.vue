@@ -10,6 +10,13 @@
   }
   body {
     margin: 0;
+    /*https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-268438.jpg*/
+    background-image: url(https://ooo.0o0.ooo/2017/02/15/58a42f52168c0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    font-size: 16px;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   }
   * {

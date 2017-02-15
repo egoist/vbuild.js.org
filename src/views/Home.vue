@@ -89,14 +89,15 @@ new Vue({
 $ ~/my-project vbuild --dev
 
 > Open http://localhost:4000`,
-        configExampleCode: `// In fact, you don't need to config things until you really need!
-module.exports = {
+        configExampleCode: `module.exports = {
   html: {
     title: 'My Awesome Project',
   }
   // ...
 }
 
+// In fact, you don't need to config things
+// Until you really need!
 // The equivalent of this in CLI options is:
 // vbuild --html.title "My Awesome Project"`
       }
@@ -130,6 +131,9 @@ module.exports = {
 <style scoped>
   .page {
     text-align: center;
+  }
+  .window {
+    background-color: white;
   }
   h1 {
     font-weight: 300;
