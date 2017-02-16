@@ -14,9 +14,6 @@ module.exports = (options, req) => ({
   ],
   webpack: {
     resolve: {
-      alias: {
-        vue$: 'vue/dist/vue'
-      },
       modules: [path.resolve('src')]
     }
   },
