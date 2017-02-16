@@ -7,9 +7,6 @@ module.exports = (options, req) => ({
     template: './index.html'
   },
   postcss: [
-    req('autoprefixer')({
-      browsers: ['last 4 versions', 'ie > 8']
-    }),
     require('postcss-nested')
   ],
   webpack: {
