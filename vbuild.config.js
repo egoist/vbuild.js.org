@@ -1,7 +1,7 @@
 const path = require('path')
 const OfflinePlugin = require('offline-plugin')
 
-module.exports = (options, req) => ({
+module.exports = {
   entry: 'src/index.js',
   html: {
     title: 'vbuild: Install once, Build everywhere',
@@ -22,4 +22,4 @@ module.exports = (options, req) => ({
       })
     ]
   }
-})
+}
