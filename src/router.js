@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import ga from 'vue-ga'
 
 Vue.use(Router)
 
@@ -15,10 +16,6 @@ const router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  next()
-  ga('set', 'page', to)
-  ga('send', 'pageview')
-})
+ga(router, 'UA-54857209-8')
 
 export default router
