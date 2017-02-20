@@ -1,4 +1,5 @@
 const path = require('path')
+const OfflinePlugin = require('offline-plugin')
 
 module.exports = (options, req) => ({
   entry: 'src/index.js',
@@ -12,9 +13,13 @@ module.exports = (options, req) => ({
   webpack: {
     resolve: {
       modules: [path.resolve('src')]
-    }
-  },
-  eslintConfig: {
-    globals: ['ga']
+    },
+    plugins: [
+      new OfflinePlugin({
+        ServiceWorker: {
+          events: true
+        }
+      })
+    ]
   }
 })
