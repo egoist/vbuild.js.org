@@ -1,7 +1,7 @@
 const path = require('path')
 const OfflinePlugin = require('offline-plugin')
 
-module.exports = {
+module.exports = options => ({
   entry: 'src/index.js',
   html: {
     title: 'vbuild: Install once, Build everywhere',
@@ -10,16 +10,15 @@ module.exports = {
   postcss: [
     require('postcss-nested')
   ],
-  webpack: {
-    resolve: {
-      modules: [path.resolve('src')]
-    },
-    plugins: [
-      new OfflinePlugin({
+  webpack(config) {
+    if (!options.dev) {
+      config.plugins.push(new OfflinePlugin({
         ServiceWorker: {
           events: true
         }
-      })
-    ]
+      }))
+    }
+    config.resolve.modules.push(path.resolve('src'))
+    return config
   }
-}
+})
